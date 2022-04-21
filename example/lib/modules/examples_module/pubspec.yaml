@@ -1,5 +1,5 @@
 publish_to: none
-name: root
+name: examples_module
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -11,21 +11,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   riverflow:
-    path: ../../../
-  hooks_riverpod: any
-  freezed_annotation: any
+    path: ../../../../
+
+  root:
+    path: ../root
+
+  hooks_riverpod: ^1.0.3
+  freezed_annotation: ^2.0.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  hive:
-  hive_flutter:
-  path_provider:
+  cupertino_icons: ^1.0.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^1.0.4
+  build_runner: ^2.1.10
+  freezed: ^2.0.2
+  test: ^1.21.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
