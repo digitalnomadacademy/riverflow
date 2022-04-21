@@ -1,4 +1,6 @@
-import 'package:nsl/utils/logger.dart';
+
+
+import 'logger.dart';
 
 typedef SignalListener1<T> = void Function(T payload);
 typedef SignalListener0 = void Function();

@@ -1,7 +1,8 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nsl/utils/actor.dart';
-import 'package:nsl/utils/signal.dart';
+import 'package:riverflow/utils/signal.dart';
 
+
+import 'actor.dart';
 import 'command.dart';
 
 final signalCommandMapProvider = Provider((ProviderRef ref) {
