@@ -1,6 +1,4 @@
-
-
-import 'logger.dart';
+import 'package:riverflow/utils/logger.dart';
 
 typedef SignalListener1<T> = void Function(T payload);
 typedef SignalListener0 = void Function();

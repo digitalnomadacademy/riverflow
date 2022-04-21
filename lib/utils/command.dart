@@ -4,7 +4,6 @@ import 'package:riverflow/utils/service.dart';
 import 'package:riverflow/utils/signal.dart';
 import 'package:riverflow/utils/store.dart';
 
-
 /// Command will read Store and Service
 /// Command can also chain execute other commands
 ///
@@ -14,7 +13,6 @@ class _BaseCommand {
   final ProviderRef ref;
 
   _BaseCommand(this.ref);
-
   // T read<T>(Provider<T> provider) {
   //   return ref.watch(provider);
   // }

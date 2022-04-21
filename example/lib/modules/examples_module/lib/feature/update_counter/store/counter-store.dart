@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverflow/utils/store.dart';
 
-import '../observables/counter_observable.dart';
+import '../observable/counter_observable.dart';
 
 final counterStoreProvider = Provider((ref) => CounterStore(ref));
 

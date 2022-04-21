@@ -1,5 +1,4 @@
-library examples_module;
-
+library examples;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +6,9 @@ import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverflow/widgets/module_widget.dart';
 
-
+import 'feature/update_counter/ui/counter_page.dart';
 import 'nsl/config/config.dart';
 import 'nsl/ui/samples/async_button_example.dart';
-import 'nsl/ui/samples/counter_example.dart';
 import 'nsl/ui/samples/global_time_example.dart';
 import 'nsl/ui/samples/sum_example.dart';
 

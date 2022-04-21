@@ -10,11 +10,12 @@ abstract class BaseActor {
     ref.onDispose(dispose);
   }
 
-  T read<T>(StateProvider<T> provider) {
+  T readObservableeee<T>(StateProvider<T> provider) {
     return ref.watch(provider.notifier).state;
   }
 
-  void write<T>(StateProvider<T> provider, T value, {bool cache = false}) {
+  void writeObservableeee<T>(StateProvider<T> provider, T value,
+      {bool cache = false}) {
     ref.watch(provider.notifier).state = value;
   }
 

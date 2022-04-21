@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverflow/widgets/module_widget.dart';
-
 import 'package:root/root.dart';
 import 'package:time_zone_time_module/src/signal/time_zone_changed_signal.dart';
 
@@ -34,7 +33,9 @@ class TimeZoneModule extends StatelessWidget {
               return Slider(
                   value: interval.timeZone01Interval,
                   onChanged: (val) {
-                    ref.watch(updateTimeZoneSignalProvider).dispatch(TimeZonePayload(val));
+                    ref
+                        .watch(updateTimeZoneSignalProvider)
+                        .dispatch(TimeZonePayload(val));
                   },
                   divisions: 10);
             }),
