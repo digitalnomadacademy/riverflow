@@ -13,14 +13,16 @@ dependencies:
     sdk: flutter
   root:
     path: ../../../root
-  hooks_riverpod: any
   riverflow:
-    path: ../../../../../
+    path: ../../../../../../
+
+  hooks_riverpod: ^1.0.3
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

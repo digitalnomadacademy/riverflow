@@ -149,7 +149,7 @@ packages:
     source: hosted
     version: "3.0.1"
   cupertino_icons:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: cupertino_icons
       url: "https://pub.dartlang.org"
@@ -172,7 +172,7 @@ packages:
   examples_module:
     dependency: "direct main"
     description:
-      path: "modules/examples_module"
+      path: "lib/modules/examples_module"
       relative: true
     source: path
     version: "0.0.1"
@@ -504,7 +504,7 @@ packages:
   root:
     dependency: "direct main"
     description:
-      path: "modules/root"
+      path: "lib/modules/root"
       relative: true
     source: path
     version: "0.0.1"
@@ -600,7 +600,7 @@ packages:
   time_zone_time_module:
     dependency: "direct main"
     description:
-      path: "modules/examples_module/modules/time_zone_time_module"
+      path: "lib/modules/examples_module/modules/time_zone_time_module"
       relative: true
     source: path
     version: "0.0.1"
