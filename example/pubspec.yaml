@@ -16,12 +16,13 @@ dependencies:
     sdk: flutter
 
   examples_module:
-    path: lib/modules/examples_module
+    path: modules/examples_module
   root:
-    path: lib/modules/root
+    path: modules/root
 
   time_zone_time_module:
-    path: lib/modules/examples_module/modules/time_zone_time_module
+    path: modules/examples_module/modules/time_zone_time_module
+
 
   hive: ^2.1.0
   hive_flutter: ^1.1.0
