@@ -8,7 +8,8 @@ final sumStoreProvider = Provider((ref) => SumStore(ref));
 class SumStore extends BaseActor {
   SumStore(ProviderRef ref) : super(ref);
 
-  SumObservable get sumObservable => read(sumObservableProvider);
+  SumObservable get sumObservable => readObservableeee(sumObservableProvider);
 
-  void sum(int a, int b) => write(sumObservableProvider, SumObservable(a + b));
+  void sum(int a, int b) =>
+      writeObservableeee(sumObservableProvider, SumObservable(a + b));
 }

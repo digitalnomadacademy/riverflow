@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverflow/utils/service.dart';
 
-
 var globalDateTimeServiceProvider =
     Provider((ref) => GlobalDateTimeService(ref));
 
@@ -12,7 +11,8 @@ class GlobalDateTimeService extends BaseService {
 
   GlobalDateTimeService(ref) : super(ref) {
     timer = Timer(const Duration(seconds: 1), () {
-      write(globalDateTimeEntityProvider, DateTimeEntity(DateTime.now()));
+      writeObservableeee(
+          globalDateTimeEntityProvider, DateTimeEntity(DateTime.now()));
     });
   }
 }

@@ -1,6 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverflow/utils/store.dart';
-
 import 'package:root/root.dart';
 
 import '../observable/time_zone_observable.dart';
@@ -12,9 +11,9 @@ class TimeZoneStore extends BaseStore {
 
   /// interval 0 -- 1
   void updateTimeZone(double interval) {
-    var globalTime = read(globalDateTimeEntityProvider);
+    var globalTime = readObservableeee(globalDateTimeEntityProvider);
     int timeZoneDifference = ((interval * 10 - 5)).toInt();
-    write(
+    writeObservableeee(
         timeZoneDateTimeObservableProvider,
         TimeZoneDateTimeObservable(
             dateTime:

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -23,7 +22,7 @@ class AsyncButtonExample extends ConsumerWidget {
                 'Press The button to call the API and leave the Page once the request is done'),
             AsyncButton(
               onPressedAsync: () async {
-                await ref.watch(asyncButtonSignalProvider).dispatch();
+                await ref.watch(asyncButtonClickedSignalProvider).dispatch();
                 Navigator.of(context).pop();
               },
               child: (const Text('PRESS ME')),
