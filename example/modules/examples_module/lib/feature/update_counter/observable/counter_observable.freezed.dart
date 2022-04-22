@@ -28,6 +28,7 @@ abstract class $CounterObservableCopyWith<$Res> {
   factory $CounterObservableCopyWith(
           CounterObservable value, $Res Function(CounterObservable) then) =
       _$CounterObservableCopyWithImpl<$Res>;
+
   $Res call({int counter});
 }
 
@@ -37,6 +38,7 @@ class _$CounterObservableCopyWithImpl<$Res>
   _$CounterObservableCopyWithImpl(this._value, this._then);
 
   final CounterObservable _value;
+
   // ignore: unused_field
   final $Res Function(CounterObservable) _then;
 
@@ -59,6 +61,7 @@ abstract class _$CounterObservableCopyWith<$Res>
   factory _$CounterObservableCopyWith(
           _CounterObservable value, $Res Function(_CounterObservable) then) =
       __$CounterObservableCopyWithImpl<$Res>;
+
   @override
   $Res call({int counter});
 }
@@ -124,6 +127,7 @@ abstract class _CounterObservable implements CounterObservable {
 
   @override
   int get counter => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$CounterObservableCopyWith<_CounterObservable> get copyWith =>

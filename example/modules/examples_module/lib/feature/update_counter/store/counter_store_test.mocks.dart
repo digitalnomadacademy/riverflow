@@ -39,18 +39,22 @@ class MockCounterStore extends _i1.Mock implements _i4.CounterStore {
   _i2.CounterObservable get counterO =>
       (super.noSuchMethod(Invocation.getter(#counterO),
           returnValue: _FakeCounterObservable_0()) as _i2.CounterObservable);
+
   @override
   _i3.ProviderContainer get providerContainer =>
       (super.noSuchMethod(Invocation.getter(#providerContainer),
           returnValue: _FakeProviderContainer_1()) as _i3.ProviderContainer);
+
   @override
   void updateCounter() =>
       super.noSuchMethod(Invocation.method(#updateCounter, []),
           returnValueForMissingStub: null);
+
   @override
   T readObservable<T>(_i3.StateProvider<T>? provider) =>
       (super.noSuchMethod(Invocation.method(#readObservable, [provider]),
           returnValue: _i5.mockReadObservable<T>(provider)) as T);
+
   @override
   void writeObservable<T>(_i3.StateProvider<T>? provider, T? value,
           {bool? cache = false}) =>
@@ -58,6 +62,7 @@ class MockCounterStore extends _i1.Mock implements _i4.CounterStore {
           Invocation.method(
               #writeObservable, [provider, value], {#cache: cache}),
           returnValueForMissingStub: null);
+
   @override
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);

@@ -28,6 +28,7 @@ abstract class $SumObservableCopyWith<$Res> {
   factory $SumObservableCopyWith(
           SumObservable value, $Res Function(SumObservable) then) =
       _$SumObservableCopyWithImpl<$Res>;
+
   $Res call({int sum});
 }
 
@@ -37,6 +38,7 @@ class _$SumObservableCopyWithImpl<$Res>
   _$SumObservableCopyWithImpl(this._value, this._then);
 
   final SumObservable _value;
+
   // ignore: unused_field
   final $Res Function(SumObservable) _then;
 
@@ -59,6 +61,7 @@ abstract class _$SumObservableCopyWith<$Res>
   factory _$SumObservableCopyWith(
           _SumObservable value, $Res Function(_SumObservable) then) =
       __$SumObservableCopyWithImpl<$Res>;
+
   @override
   $Res call({int sum});
 }
@@ -123,6 +126,7 @@ abstract class _SumObservable implements SumObservable {
 
   @override
   int get sum => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$SumObservableCopyWith<_SumObservable> get copyWith =>

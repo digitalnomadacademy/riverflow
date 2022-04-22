@@ -10,7 +10,8 @@ class HiveLocalStorageService implements LocalStorageService {
   Future<Directory> pathFuture;
 
   HiveLocalStorageService({
-    required this.boxName, required this.pathFuture,
+    required this.boxName,
+    required this.pathFuture,
   });
 
   Box getBox() {
@@ -18,7 +19,7 @@ class HiveLocalStorageService implements LocalStorageService {
   }
 
   @override
-  Future<void> init() async{
+  Future<void> init() async {
     var path = await pathFuture;
     Hive.init(path.path);
   }
