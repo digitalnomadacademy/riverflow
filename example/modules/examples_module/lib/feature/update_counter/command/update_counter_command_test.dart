@@ -21,7 +21,11 @@ void main() {
 
   test('command calls update counter method on the store', () {
     var command = UpdateCounterCommand(providerContainer);
+    verifyZeroInteractions(mockCounterStore);
+
     command.execute();
     verify(command.execute());
+
+    verifyNoMoreInteractions(mockCounterStore);
   });
 }
