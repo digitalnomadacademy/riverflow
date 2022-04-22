@@ -6,12 +6,13 @@ import '../signal/time_zone_changed_signal.dart';
 import '../store/time_zone_store.dart';
 
 void mapUpdateTimezoneCommand(SignalCommandMap signalCommandMap) {
-  signalCommandMap.map1(
-      updateTimeZoneSignalProvider, (ref) => UpdateTimeZoneCommand(ref));
+  signalCommandMap.map1(updateTimeZoneSignalProvider,
+      (providerContainer) => UpdateTimeZoneCommand(providerContainer));
 }
 
 class UpdateTimeZoneCommand extends Command1<TimeZonePayload> {
-  UpdateTimeZoneCommand(ProviderRef ref) : super(ref);
+  UpdateTimeZoneCommand(ProviderContainer providerContainer)
+      : super(providerContainer);
 
   @override
   void execute(TimeZonePayload payload) {

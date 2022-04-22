@@ -6,11 +6,12 @@ import '../signal/async_button_signal.dart';
 
 void mapAsyncButtonClickedCommand(SignalCommandMap signalCommandMap) {
   signalCommandMap.mapAsync0(asyncButtonClickedSignalProvider,
-      (ref) => AsyncButtonClickedCommand(ref));
+      (providerContainer) => AsyncButtonClickedCommand(providerContainer));
 }
 
 class AsyncButtonClickedCommand extends AsyncCommand0 {
-  AsyncButtonClickedCommand(ProviderRef ref) : super(ref);
+  AsyncButtonClickedCommand(ProviderContainer providerContainer)
+      : super(providerContainer);
 
   @override
   Future<void> execute() async {

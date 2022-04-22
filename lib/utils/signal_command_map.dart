@@ -5,7 +5,7 @@ import 'package:riverflow/utils/signal.dart';
 import 'command.dart';
 
 final signalCommandMapProvider = Provider((ProviderRef ref) {
-  var signalCommandMap = SignalCommandMap(ref);
+  var signalCommandMap = SignalCommandMap(ref.container);
 
   return signalCommandMap;
 });
@@ -13,37 +13,46 @@ final signalCommandMapProvider = Provider((ProviderRef ref) {
 class SignalCommandMap extends BaseActor {
   final List<BaseSubscription> subscriptions = [];
 
-  SignalCommandMap(ProviderRef ref) : super(ref);
+  SignalCommandMap(ProviderContainer providerContainer)
+      : super(providerContainer);
 
-  void map1<T>(Provider<Signal1<T>> signalProvider,
-      Command1<T> Function(ProviderRef ref) commandFactory) {
-    var signal = ref.watch(signalProvider);
-    var subscription =
-        signal.listen((payload) => commandFactory(ref).execute(payload));
+  void map1<T>(
+      Provider<Signal1<T>> signalProvider,
+      Command1<T> Function(ProviderContainer providerContainer)
+          commandFactory) {
+    var signal = providerContainer.read(signalProvider);
+    var subscription = signal.listen(
+        (payload) => commandFactory(providerContainer).execute(payload));
     subscriptions.add(subscription);
   }
 
   void map0(Provider<Signal0> signalProvider,
-      Command0 Function(ProviderRef ref) commandFactory) {
-    var signal = ref.watch(signalProvider);
-    var subscription = signal.listen(() => commandFactory(ref).execute());
+      Command0 Function(ProviderContainer providerContainer) commandFactory) {
+    var signal = providerContainer.read(signalProvider);
+    var subscription =
+        signal.listen(() => commandFactory(providerContainer).execute());
     subscriptions.add(subscription);
   }
 
-  void mapAsync1<T>(Provider<AsyncSignal1<T>> signalProvider,
-      AsyncCommand1<T> Function(ProviderRef ref) commandFactory) {
-    var signal = ref.watch(signalProvider);
+  void mapAsync1<T>(
+      Provider<AsyncSignal1<T>> signalProvider,
+      AsyncCommand1<T> Function(ProviderContainer providerContainer)
+          commandFactory) {
+    var signal = providerContainer.read(signalProvider);
+
+    var subscription = signal.listen(
+        (payload) => commandFactory(providerContainer).execute(payload));
+    subscriptions.add(subscription);
+  }
+
+  void mapAsync0(
+      Provider<AsyncSignal0> signalProvider,
+      AsyncCommand0 Function(ProviderContainer providerContainer)
+          commandFactory) {
+    var signal = providerContainer.read(signalProvider);
 
     var subscription =
-        signal.listen((payload) => commandFactory(ref).execute(payload));
-    subscriptions.add(subscription);
-  }
-
-  void mapAsync0(Provider<AsyncSignal0> signalProvider,
-      AsyncCommand0 Function(ProviderRef ref) commandFactory) {
-    var signal = ref.watch(signalProvider);
-
-    var subscription = signal.listen(() => commandFactory(ref).execute());
+        signal.listen(() => commandFactory(providerContainer).execute());
     subscriptions.add(subscription);
   }
 

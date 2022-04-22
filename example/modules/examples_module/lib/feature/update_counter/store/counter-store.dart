@@ -3,14 +3,13 @@ import 'package:riverflow/utils/store.dart';
 
 import '../observable/counter_observable.dart';
 
-final counterStoreProvider = Provider((ref) => CounterStore(ref));
+final counterStoreProvider = Provider((ref) => CounterStore(ref.container));
 
 class CounterStore extends BaseStore {
-  CounterStore(ProviderRef ref) : super(ref);
+  CounterStore(ProviderContainer providerContainer) : super(providerContainer);
 
-  CounterObservable get counterO =>
-      readObservableeee(counterObservableProvider);
+  CounterObservable get counterO => readObservable(counterObservableProvider);
 
-  void updateCounter() => writeObservableeee(counterObservableProvider,
+  void updateCounter() => writeObservable(counterObservableProvider,
       counterO.copyWith(counter: counterO.counter + 1));
 }

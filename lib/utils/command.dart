@@ -10,46 +10,46 @@ import 'package:riverflow/utils/store.dart';
 /// todo make commands async
 class _BaseCommand {
   @protected
-  final ProviderRef ref;
+  final ProviderContainer providerContainer;
 
-  _BaseCommand(this.ref);
+  _BaseCommand(this.providerContainer);
   // T read<T>(Provider<T> provider) {
   //   return ref.watch(provider);
   // }
 
   T readStore<T extends BaseStore>(Provider<T> provider) {
-    return ref.watch(provider);
+    return providerContainer.read(provider);
   }
 
   T readService<T extends BaseService>(Provider<T> provider) {
-    return ref.watch(provider);
+    return providerContainer.read(provider);
   }
 
   T readSignal<T extends Signal1>(Provider<T> provider) {
-    return ref.watch(provider);
+    return providerContainer.read(provider);
   }
 }
 
 abstract class Command1<T> extends _BaseCommand {
-  Command1(ProviderRef ref) : super(ref);
+  Command1(ProviderContainer container) : super(container);
 
   void execute(T payload);
 }
 
 abstract class Command0 extends _BaseCommand {
-  Command0(ProviderRef ref) : super(ref);
+  Command0(ProviderContainer container) : super(container);
 
   void execute();
 }
 
 abstract class AsyncCommand1<T> extends _BaseCommand {
-  AsyncCommand1(ProviderRef ref) : super(ref);
+  AsyncCommand1(ProviderContainer container) : super(container);
 
   Future<void> execute(T payload);
 }
 
 abstract class AsyncCommand0 extends _BaseCommand {
-  AsyncCommand0(ProviderRef ref) : super(ref);
+  AsyncCommand0(ProviderContainer container) : super(container);
 
   Future<void> execute();
 }

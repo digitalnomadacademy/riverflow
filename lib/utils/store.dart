@@ -1,6 +1,6 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverflow/utils/actor.dart';
-import 'package:riverpod/src/provider.dart';
 
 abstract class BaseStore extends BaseActor {
-  BaseStore(ProviderRef ref) : super(ref);
+  BaseStore(ProviderContainer providerContainer) : super(providerContainer);
 }

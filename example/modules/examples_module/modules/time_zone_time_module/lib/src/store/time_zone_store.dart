@@ -4,16 +4,16 @@ import 'package:root/root.dart';
 
 import '../observable/time_zone_observable.dart';
 
-var timeZoneStoreProvider = Provider((ref) => TimeZoneStore(ref));
+var timeZoneStoreProvider = Provider((ref) => TimeZoneStore(ref.container));
 
 class TimeZoneStore extends BaseStore {
-  TimeZoneStore(ProviderRef ref) : super(ref);
+  TimeZoneStore(ProviderContainer providerContainer) : super(providerContainer);
 
   /// interval 0 -- 1
   void updateTimeZone(double interval) {
-    var globalTime = readObservableeee(globalDateTimeEntityProvider);
+    var globalTime = readObservable(globalDateTimeEntityProvider);
     int timeZoneDifference = ((interval * 10 - 5)).toInt();
-    writeObservableeee(
+    writeObservable(
         timeZoneDateTimeObservableProvider,
         TimeZoneDateTimeObservable(
             dateTime:

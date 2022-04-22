@@ -1,15 +1,15 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverflow/utils/actor.dart';
+import 'package:riverflow/utils/store.dart';
 
 import '../observables/sum_observable.dart';
 
-final sumStoreProvider = Provider((ref) => SumStore(ref));
+final sumStoreProvider = Provider((ref) => SumStore(ref.container));
 
-class SumStore extends BaseActor {
-  SumStore(ProviderRef ref) : super(ref);
+class SumStore extends BaseStore {
+  SumStore(ProviderContainer providerContainer) : super(providerContainer);
 
-  SumObservable get sumObservable => readObservableeee(sumObservableProvider);
+  SumObservable get sumObservable => readObservable(sumObservableProvider);
 
   void sum(int a, int b) =>
-      writeObservableeee(sumObservableProvider, SumObservable(a + b));
+      writeObservable(sumObservableProvider, SumObservable(a + b));
 }

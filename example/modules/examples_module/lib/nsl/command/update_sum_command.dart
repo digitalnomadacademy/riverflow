@@ -11,10 +11,11 @@ void mapUpdateSumCommand(SignalCommandMap signalCommandMap) {
 }
 
 class UpdateSumCommand extends Command1<UpdateSumPayload> {
-  UpdateSumCommand(ProviderRef ref) : super(ref);
+  UpdateSumCommand(ProviderContainer providerContainer)
+      : super(providerContainer);
 
   @override
   void execute(UpdateSumPayload payload) {
-    ref.watch(sumStoreProvider).sum(payload.a, payload.b);
+    readStore(sumStoreProvider).sum(payload.a, payload.b);
   }
 }

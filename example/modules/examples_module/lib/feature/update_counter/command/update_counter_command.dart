@@ -6,12 +6,12 @@ import '../signal/update_counter_signal.dart';
 import '../store/counter-store.dart';
 
 void mapUpdateCounterCommand(SignalCommandMap signalCommandMap) {
-  signalCommandMap.map0(
-      updateCounterSignalProvider, (ref) => UpdateCounterCommand(ref));
+  signalCommandMap.map0(updateCounterSignalProvider,
+      (providerContainer) => UpdateCounterCommand(providerContainer));
 }
 
 class UpdateCounterCommand extends Command0 {
-  UpdateCounterCommand(ProviderRef ref) : super(ref);
+  UpdateCounterCommand(ProviderContainer container) : super(container);
 
   @override
   void execute() {

@@ -17,12 +17,14 @@ dependencies:
     path: ../../../../../../riverflow
 
   hooks_riverpod: ^1.0.3
+  mockito: ^5.1.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.4
+  build_runner: ^2.1.10
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

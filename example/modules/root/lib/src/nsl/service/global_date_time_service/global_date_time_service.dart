@@ -11,7 +11,7 @@ class GlobalDateTimeService extends BaseService {
 
   GlobalDateTimeService(ref) : super(ref) {
     timer = Timer(const Duration(seconds: 1), () {
-      writeObservableeee(
+      writeObservable(
           globalDateTimeEntityProvider, DateTimeEntity(DateTime.now()));
     });
   }

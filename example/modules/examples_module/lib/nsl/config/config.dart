@@ -7,8 +7,8 @@ import '../command/update_sum_command.dart';
 
 ProviderContainer configureExamples() {
   var providerContainer = ProviderContainer(overrides: [
-    signalCommandMapProvider
-        .overrideWithProvider(Provider((ref) => SignalCommandMap(ref)))
+    signalCommandMapProvider.overrideWithProvider(
+        Provider((ref) => SignalCommandMap(ref.container)))
   ]);
   mapCommands(providerContainer);
 

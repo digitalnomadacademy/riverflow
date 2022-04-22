@@ -12,21 +12,7 @@ part of 'counter_observable.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CounterObservableTearOff {
-  const _$CounterObservableTearOff();
-
-  _CounterObservable call({required int counter}) {
-    return _CounterObservable(
-      counter: counter,
-    );
-  }
-}
-
-/// @nodoc
-const $CounterObservable = _$CounterObservableTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CounterObservable {
@@ -133,10 +119,11 @@ class _$_CounterObservable implements _CounterObservable {
 }
 
 abstract class _CounterObservable implements CounterObservable {
-  factory _CounterObservable({required int counter}) = _$_CounterObservable;
+  factory _CounterObservable({required final int counter}) =
+      _$_CounterObservable;
 
   @override
-  int get counter;
+  int get counter => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CounterObservableCopyWith<_CounterObservable> get copyWith =>

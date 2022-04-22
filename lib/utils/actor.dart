@@ -4,19 +4,17 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'logger.dart';
 
 abstract class BaseActor {
-  final ProviderRef ref;
+  final ProviderContainer providerContainer;
 
-  BaseActor(this.ref) {
-    ref.onDispose(dispose);
+  BaseActor(this.providerContainer);
+
+  T readObservable<T>(StateProvider<T> provider) {
+    return providerContainer.read(provider.notifier).state;
   }
 
-  T readObservableeee<T>(StateProvider<T> provider) {
-    return ref.watch(provider.notifier).state;
-  }
-
-  void writeObservableeee<T>(StateProvider<T> provider, T value,
+  void writeObservable<T>(StateProvider<T> provider, T value,
       {bool cache = false}) {
-    ref.watch(provider.notifier).state = value;
+    providerContainer.read(provider.notifier).state = value;
   }
 
   @mustCallSuper

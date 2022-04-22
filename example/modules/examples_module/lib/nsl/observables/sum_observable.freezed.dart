@@ -12,21 +12,7 @@ part of 'sum_observable.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SumObservableTearOff {
-  const _$SumObservableTearOff();
-
-  _SumObservable call(int sum) {
-    return _SumObservable(
-      sum,
-    );
-  }
-}
-
-/// @nodoc
-const $SumObservable = _$SumObservableTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SumObservable {
@@ -133,10 +119,10 @@ class _$_SumObservable implements _SumObservable {
 }
 
 abstract class _SumObservable implements SumObservable {
-  factory _SumObservable(int sum) = _$_SumObservable;
+  factory _SumObservable(final int sum) = _$_SumObservable;
 
   @override
-  int get sum;
+  int get sum => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SumObservableCopyWith<_SumObservable> get copyWith =>
