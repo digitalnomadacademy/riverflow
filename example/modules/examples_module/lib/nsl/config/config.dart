@@ -5,11 +5,11 @@ import '../../feature/update_counter/command/update_counter_command.dart';
 import '../command/async_button_command.dart';
 import '../command/update_sum_command.dart';
 
-ProviderContainer configureExamples() {
+ProviderContainer configureExamples(ProviderContainer parent) {
   var providerContainer = ProviderContainer(overrides: [
     signalCommandMapProvider.overrideWithProvider(
         Provider((ref) => SignalCommandMap(ref.container)))
-  ]);
+  ], parent: parent);
   mapCommands(providerContainer);
 
   return providerContainer;

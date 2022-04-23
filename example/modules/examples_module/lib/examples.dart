@@ -21,7 +21,7 @@ class ExamplesModule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ModuleWidget(
-      configure: () => configureExamples(),
+      configure: () => configureExamples(ProviderScope.containerOf(context)),
       builder: (context) => MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
