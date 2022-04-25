@@ -44,6 +44,16 @@ void main() {
     observable = actor.readObservable(_testObservableProvider);
     expect(observable.counter, 7);
   });
+
+  // power of types in dart. this cannot even compile
+
+  // test('cannot read observable that is not stateProvider', () {
+  //   var providerContainer = ProviderContainer();
+  //   var actor = _TestActor(providerContainer);
+  //
+  //   actor.readObservable(_testRegularProvider);
+  //
+  // });
 }
 
 class _TestActor extends BaseActor {
@@ -51,6 +61,8 @@ class _TestActor extends BaseActor {
 }
 
 var _testObservableProvider = StateProvider((red) => _TestObservable(0));
+
+var _testRegularProvider = Provider((ref) => _TestObservable(0));
 
 class _TestObservable {
   final int counter;
